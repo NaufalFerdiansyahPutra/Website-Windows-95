@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Desktop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="desktop.css">
+</head>
+<body>
+
+  <div class="desktop-frame">
+    <div class="icons-area">
+      <div class="icon" onclick="openPresent()">
+        <img src="pngtree-christmas-gift-icon-pixel-png-image_6142466.png" alt="Present.exe">
+        <div class="icon-name">Present.exe</div>
+      </div>
+      
+      <div class="icon" onclick="openMusik()">
+        <img src="images.png" alt="Musik">
+        <div class="icon-name">Musik.mp3</div>
+      </div>
+      
+      <div class="icon" onclick="openCake()">
+        <img src="kue.jpg" alt="Cake">
+        <div class="icon-name">Cake.exe</div>
+      </div>
+      
+      <div class="icon" onclick="openGaleri()">
+        <img src="kamera.jpg" alt="Galeri">
+        <div class="icon-name">Galeri.jpg</div>
+      </div>
+    </div>
+    
+    <div class="taskbar">
+      <div class="taskbar-left">
+        <div class="start-button" onclick="toggleStartMenu()">
+          <div class="start-icon">W</div>
+          <span>Start</span>
+        </div>
+        <div class="start-menu" id="startMenu">
+          <div class="menu-item" onclick="openPresent()">
+            <div class="menu-icon">🎁</div>
+            <span>Present.exe</span>
+          </div>
+          <div class="menu-item" onclick="openMusik()">
+            <div class="menu-icon">🎵</div>
+            <span>Musik.mp3</span>
+          </div>
+          <div class="menu-item" onclick="openCake()">
+            <div class="menu-icon">🎂</div>
+            <span>Cake.exe</span>
+          </div>
+          <div class="menu-item" onclick="openGaleri()">
+            <div class="menu-icon">📷</div>
+            <span>Galeri.jpg</span>
+          </div>
+          <div class="menu-item" onclick="openNotepad()">
+            <div class="menu-icon">📝</div>
+            <span>Notepad</span>
+          </div>
+          <div class="menu-separator"></div>
+          <div class="menu-item" onclick="shutdown()">
+            <div class="menu-icon">⏻</div>
+            <span>Shutdown</span>
+          </div>
+        </div>
+        <div class="taskbar-apps">
+          <div class="taskbar-app" id="present-taskbar" style="display: none;" onclick="openAppFromTaskbar('present')">
+            <div class="app-icon">🎁</div>
+            <span>Present</span>
+          </div>
+          <div class="taskbar-app" id="musik-taskbar" style="display: none;" onclick="openAppFromTaskbar('musik')">
+            <div class="app-icon">🎵</div>
+            <span>Musik.mp3</span>
+          </div>
+          <div class="taskbar-app" id="cake-taskbar" style="display: none;" onclick="openAppFromTaskbar('cake')">
+            <div class="app-icon">🎂</div>
+            <span>Cake.exe</span>
+          </div>
+          <div class="taskbar-app" id="galeri-taskbar" style="display: none;" onclick="openAppFromTaskbar('galeri')">
+            <div class="app-icon">📷</div>
+            <span>Galeri.jpg</span>
+          </div>
+          <div class="taskbar-app" id="notepad-taskbar" style="display: none;" onclick="openAppFromTaskbar('notepad')">
+            <div class="app-icon">📝</div>
+            <span>Notepad</span>
+          </div>
+        </div>
+      </div>
+      <div class="taskbar-right">
+        <div class="time-display">
+          <div class="time" id="time">21:12:47</div>
+          <div class="date" id="date">21 Apr 2005</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="popup-overlay" id="presentOverlay" style="display: none;">
+    <div class="present-window">
+      <div class="title-bar">
+        <div>Present.exe</div>
+        <div class="buttons">
+          <div onclick="minimizeWindow('present')">_</div>
+          <div onclick="maximizeWindow('present')">▭</div>
+          <div onclick="closeWindow('present')">x</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="header">
+          <h1>Happy Birthday!!</h1>
+        </div>
+        
+        <div class="subheader blinking">SELAMAT ULANG TAHUN KE-XX</div>
+        
+        <div class="file-name">MESSAGE.TXT</div>
+        
+        <div class="message">
+          <p>
+           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quisquam corporis, eveniet soluta nobis dignissimos atque. Cumque ea repellat doloremque quaerat fugiat impedit sunt iusto, aspernatur qui, voluptates veniam nostrum molestias magni ipsa deleniti quam sapiente? Minima vel corrupti qui alias facilis consequuntur quisquam, accusantium provident. Quod aspernatur praesentium a!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quos dolorem magni itaque minus perferendis repellendus repellat doloribus provident mollitia ea. Placeat voluptate veniam provident quis sed impedit, labore veritatis saepe magnam nihil, sunt commodi beatae inventore hic similique culpa laudantium maxime dicta quod ea dignissimos laborum eos? Dolore, natus?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, quas minus! Debitis laudantium adipisci modi iste numquam, reprehenderit odio esse quo vero impedit minus dolores sequi? Inventore adipisci expedita perspiciatis dolorem, iste est similique a ullam dolores cupiditate explicabo quidem? Dignissimos dolore perspiciatis consequuntur ut deserunt sequi provident, animi sunt. 
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aliquam error. Impedit beatae ipsum officiis obcaecati! Consectetur cum perspiciatis debitis alias dolorum obcaecati ad possimus, neque vitae voluptates. Neque rerum enim unde, expedita recusandae amet consequatur, laudantium molestias distinctio voluptatum odio debitis ullam. Dolorum, exercitationem voluptates sapiente est vitae commodi.
+          </p>
+          <p>
+            Dear,
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet.
+          </p>
+          <div class="next-instruction">
+            ┌─ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique? ─┐
+          </div>  
+        </div>
+
+        <div style="text-align:center;">
+          <button onclick="closeWindow('present')">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="musikOverlay" style="display: none;">
+    <div class="music-popup-window">
+      <div class="title-bar">
+        <div>Musik.mp3</div>
+        <div class="buttons">
+          <div onclick="minimizeWindow('musik')">_</div>
+          <div onclick="maximizeWindow('musik')">▭</div>
+          <div onclick="closeWindow('musik')">x</div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>🎵 Play Music</h1>
+        <div class="subheader">Play musiknyaa!</div>
+        <audio controls>
+          <source src="wildflower.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="volume-control">
+          <img src="images__1_-removebg-preview.png" alt="Volume">
+          <input type="range" min="0" max="100" value="50" onchange="changeVolume(this.value)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="cakeOverlay" style="display: none;">
+    <div class="cake-popup-window">
+      <div class="title-bar">
+        <div>Cake.exe</div>
+        <div class="buttons">
+          <div onclick="minimizeWindow('cake')">_</div>
+          <div onclick="maximizeWindow('cake')">▭</div>
+          <div onclick="closeWindow('cake')">x</div>
+        </div>
+      </div>
+      <div class="content">
+        <h1> Kue Ulang Tahun</h1>
+        <div class="subheader">Kue nyaa online dulu yaaa hehe</div>
+
+        <div class="cake-container">
+          <!-- Hidden audio for sound effects -->
+          <audio id="blowSound" preload="auto">
+            <source src="tiup1.mp3" type="audio/mp3">
+          </audio>
+          <audio id="birthdaySound" preload="auto" volume="0.2">
+            <source src="Teslacoil.mp3" type="audio/mp3">
+          </audio>
+          
+          <!-- Kue -->
+          <div class="cake">
+            <!-- Lapisan kue -->
+            <div class="cake-layer cake-bottom"></div>
+            <div class="cake-layer cake-middle"></div>
+            <div class="cake-layer cake-top"></div>
+            
+            <!-- Frosting/Icing -->
+            <div class="frosting frosting-bottom"></div>
+            <div class="frosting frosting-middle"></div>
+            <div class="frosting frosting-top"></div>
+            
+            <!-- Lilin -->
+            <div class="candle" id="candle">
+              <div class="candle-body"></div>
+              <div class="flame" id="flame">
+                <div class="flame-inner"></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tombol tiup lilin -->
+          <button class="blow-button" onclick="blowCandle()" id="blowButton">
+            Tiup Lilinnya!
+          </button>
+          
+          <!-- Pesan ulang tahun (tersembunyi) -->
+          <div class="birthday-message" id="birthdayMessage">
+            <h2>Yey Mat Ulang Tahun!!!</h2>
+            <p>Semogaa Apapun yang inginkan terkabul yaaaa!🎉</p>
+            <button onclick="resetCake()">Ulangi</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="notepadOverlay" style="display: none;">
+    <div class="notepad-window">
+      <div class="title-bar">
+        <div>Some's Notepad</div>
+        <div class="buttons">
+          <div onclick="minimizeWindow('notepad')">_</div>
+          <div onclick="maximizeWindow('notepad')">▭</div>
+          <div onclick="closeWindow('notepad')">x</div>
+        </div>
+      </div>
+      <div class="content">
+        <textarea id="notepadText" style="width: 100%; height: 300px; border: none; resize: none; font-family: 'Courier New', monospace; font-size: 16px; padding: 10px; outline: none;">Harapan Ulang Tahun keii:
+1. Lorem ipsum dolor sit amet.
+2. lorem5 ipsum dolor sit amet consectetur adipisicing elit.
+3. Lorem ipsum dolor sit amet.
+4. lorem5 ipsum dolor sit amet consectetur adipisicing elit.
+5. lorem5 ipsum dolor sit amet consectetur adipisicing elit.
+
+Semoga ulang tahun ini menjadi ulang tahun yang penuh berkah yaa 
+</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-overlay" id="galeriOverlay" style="display: none;">
+    <div class="galeri-window">
+      <div class="title-bar">
+        <div>Galeri.jpg</div>
+        <div class="buttons">
+          <div onclick="minimizeWindow('galeri')">_</div>
+          <div onclick="maximizeWindow('galeri')">▭</div>
+          <div onclick="closeWindow('galeri')">x</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="gallery-container">
+          <!-- Image Counter -->
+          <div class="image-counter" id="imageCounter">1/4</div>
+          
+          <!-- Slides Container -->
+          <div class="slides-container">
+            <!-- Slide 1 -->
+            <div class="slide active" id="slide1">
+              <div class="polaroid">
+                <img src="jalanan.jpg" alt="Kamera" class="polaroid-image">
+                <div class="polaroid-text">Semoga</div>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" id="slide2">
+              <div class="polaroid">
+                <img src="jalanan.jpg" alt="Kue" class="polaroid-image">
+                <div class="polaroid-text">Panjang umur</div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" id="slide3">
+              <div class="polaroid">
+                <img src="jalanan.jpg" alt="Musik" class="polaroid-image">
+                <div class="polaroid-text">Sehat Selalu</div>
+              </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide" id="slide4">
+              <div class="polaroid">
+                <img src="jalanan.jpg" alt="Kue Pattern" class="polaroid-image">
+                <div class="polaroid-text">Dan selalu cantik yaa</div>
+              </div>
+            </div>
+            
+            <!-- Slide 5 - Video -->
+            <div class="slide" id="slide5">
+              <video class="direct-video" controls preload="metadata">
+                <source src="kucing.mp4" type="video/mp4">
+                Your browser does not support the video element.
+              </video>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <div class="navigation-buttons">
+            <button class="nav-button" onclick="previousSlide()" id="prevButton">
+              &lt; Sebelumnya
+            </button>
+            <button class="nav-button" onclick="nextSlide()" id="nextButton">
+              Berikutnya &gt;
+            </button>
+            <button class="nav-button" id="testVideoBtn" style="background: #000080; color: white;">
+              Test Video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check URL parameters on page load
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const openApp = urlParams.get('open');
+      
+      if (openApp) {
+        // Wait for fade in animation to complete (1.5s) + extra time, then open the specified app
+        setTimeout(() => {
+          if (openApp === 'present') {
+            openPresent();
+            console.log('🎁 Present.exe opened automatically from URL parameter');
+          } else if (openApp === 'musik') {
+            openMusik();
+          } else if (openApp === 'cake') {
+            openCake();
+          } else if (openApp === 'galeri') {
+            openGaleri();
+          } else if (openApp === 'notepad') {
+            openNotepad();
+          }
+        }, 1500); // 1.5 seconds to ensure fade in is complete
+      }
+    });
+    
+    // Update time and date
+    function updateTime() {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('en-GB', { 
+        hour12: false, 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit' 
+      });
+      const dateString = now.toLocaleDateString('en-GB', { 
+        day: '2-digit', 
+        month: 'short', 
+        year: 'numeric' 
+      });
+      
+      document.getElementById('time').textContent = timeString;
+      document.getElementById('date').textContent = dateString;
+    }
+    
+    // Update time every second
+    setInterval(updateTime, 1000);
+    updateTime(); // Initial call
+    
+    // Initialize taskbar size
+    adjustTaskbarSize();
+    
+    // Initialize gallery
+    setTimeout(() => {
+      showSlide(1);
+      console.log('Gallery initialized with slide 1');
+      
+      // Debug: Check if all slides exist
+      for (let i = 1; i <= 5; i++) {
+        const slide = document.getElementById(`slide${i}`);
+        if (slide) {
+          console.log(`Slide ${i} exists`);
+        } else {
+          console.error(`Slide ${i} missing!`);
+        }
+      }
+    }, 100);
+    
+        function toggleStartMenu() {
+      const startMenu = document.getElementById('startMenu');
+      startMenu.classList.toggle('show');
+    }
+    
+    function shutdown() {
+      window.location.href = 'shutdown.html';
+    }
+    
+    function openNotepad() {
+      const overlay = document.getElementById('notepadOverlay');
+      const taskbar = document.getElementById('notepad-taskbar');
+      
+      
+      if (taskbar) {
+        taskbar.style.display = 'flex';
+        taskbar.style.visibility = 'visible';
+        taskbar.style.opacity = '1';
+        taskbar.style.pointerEvents = 'auto';
+      }
+      
+      // If window is minimized, restore it
+      if (overlay && overlay.style.display === 'none') {
+        overlay.style.display = 'flex';
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        console.log('Notepad window restored from minimized state');
+      } else {
+        // If window is not open, open it
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        console.log('Notepad window opened');
+      }
+      
+      adjustTaskbarSize();
+    }
+    
+    // Close start menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const startButton = document.querySelector('.start-button');
+      const startMenu = document.getElementById('startMenu');
+      
+      if (!startButton.contains(event.target) && !startMenu.contains(event.target)) {
+        startMenu.classList.remove('show');
+      }
+    });
+    
+
+    
+    // Window management functions
+    function openPresent() {
+      const overlay = document.getElementById('presentOverlay');
+      const taskbar = document.getElementById('present-taskbar');
+      
+      
+      if (taskbar) {
+        taskbar.style.display = 'flex';
+        taskbar.style.visibility = 'visible';
+        taskbar.style.opacity = '1';
+        taskbar.style.pointerEvents = 'auto';
+      }
+      
+      
+      if (overlay && overlay.style.display === 'none') {
+        overlay.style.display = 'flex';
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        console.log('Present window restored from minimized state');
+      } else {
+        
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        console.log('Present window opened');
+      }
+      
+      adjustTaskbarSize();
+    }
+    
+    function openMusik() {
+      const overlay = document.getElementById('musikOverlay');
+      const taskbar = document.getElementById('musik-taskbar');
+      
+      // Always ensure taskbar icon is visible
+      if (taskbar) {
+        taskbar.style.display = 'flex';
+        taskbar.style.visibility = 'visible';
+        taskbar.style.opacity = '1';
+        taskbar.style.pointerEvents = 'auto';
+      }
+      
+      // If window is minimized, restore it
+      if (overlay && overlay.style.display === 'none') {
+        overlay.style.display = 'flex';
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        console.log('Musik window restored from minimized state');
+      } else {
+        // If window is not open, open it
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        console.log('Musik window opened');
+      }
+      
+      adjustTaskbarSize();
+    }
+    
+    function openCake() {
+      const overlay = document.getElementById('cakeOverlay');
+      const taskbar = document.getElementById('cake-taskbar');
+      
+      // Always ensure taskbar icon is visible
+      if (taskbar) {
+        taskbar.style.display = 'flex';
+        taskbar.style.visibility = 'visible';
+        taskbar.style.opacity = '1';
+        taskbar.style.pointerEvents = 'auto';
+      }
+      
+      // If window is minimized, restore it
+      if (overlay && overlay.style.display === 'none') {
+        overlay.style.display = 'flex';
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        console.log('Cake window restored from minimized state');
+      } else {
+        // If window is not open, open it
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        console.log('Cake window opened');
+      }
+      
+      adjustTaskbarSize();
+    }
+    
+    function openGaleri() {
+      const galeriOverlay = document.getElementById('galeriOverlay');
+      const galeriTaskbar = document.getElementById('galeri-taskbar');
+      
+      // Always ensure taskbar icon is visible
+      if (galeriTaskbar) {
+        galeriTaskbar.style.display = 'flex';
+        galeriTaskbar.style.visibility = 'visible';
+        galeriTaskbar.style.opacity = '1';
+        galeriTaskbar.style.pointerEvents = 'auto';
+      }
+      
+      // If window is minimized, restore it
+      if (galeriOverlay && galeriOverlay.style.display === 'none') {
+        galeriOverlay.style.display = 'flex';
+        galeriOverlay.style.visibility = 'visible';
+        galeriOverlay.style.opacity = '1';
+        galeriOverlay.style.pointerEvents = 'auto';
+        galeriOverlay.classList.add('show');
+        console.log('Galeri window restored from minimized state');
+      } else {
+        // If window is not open, open it
+        if (galeriOverlay) {
+          galeriOverlay.style.display = 'flex';
+          galeriOverlay.style.visibility = 'visible';
+          galeriOverlay.style.opacity = '1';
+          galeriOverlay.style.pointerEvents = 'auto';
+        galeriOverlay.classList.add('show');
+      }
+        console.log('Galeri window opened');
+      }
+      
+      adjustTaskbarSize();
+      
+      // Initialize gallery slides
+      setTimeout(() => {
+        showSlide(1);
+      }, 100);
+    }
+    
+
+    
+    function minimizeWindow(app) {
+      console.log(`minimizeWindow called for: ${app}`);
+      
+      // Hide the window overlay completely
+      const overlay = document.getElementById(app + 'Overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        overlay.style.visibility = 'hidden';
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        console.log(`${app} overlay hidden successfully`);
+      } else {
+        console.error(`${app} overlay not found`);
+        return false;
+      }
+      
+      // Taskbar icon stays visible - don't hide it
+      console.log(`${app} window minimized - taskbar icon remains visible`);
+      return true;
+    }
+    
+    function maximizeWindow(app) {
+      // Toggle between normal and maximized state
+      const overlay = document.getElementById(app + 'Overlay');
+      overlay.classList.toggle('maximized');
+    }
+    
+
+    
+    // Function to adjust taskbar size based on number of apps
+    function adjustTaskbarSize() {
+      const taskbarApps = document.querySelectorAll('.taskbar-app[style*="display: flex"]');
+      const totalApps = taskbarApps.length;
+      
+      // Remove all size classes first
+      taskbarApps.forEach(app => {
+        app.classList.remove('compact', 'very-compact');
+      });
+      
+      // Apply size classes based on number of apps
+      if (totalApps >= 6) {
+        taskbarApps.forEach(app => {
+          app.classList.add('very-compact');
+        });
+      } else if (totalApps >= 4) {
+        taskbarApps.forEach(app => {
+          app.classList.add('compact');
+        });
+      }
+    }
+    
+    // Function to close window with taskbar adjustment
+    function closeWindow(app) {
+      console.log(`closeWindow called for: ${app}`);
+      
+      // Hide the window overlay completely
+      const overlay = document.getElementById(app + 'Overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+        overlay.style.visibility = 'hidden';
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        console.log(`${app} overlay hidden successfully`);
+      } else {
+        console.error(`${app} overlay not found`);
+        return false;
+      }
+      
+      // Hide the taskbar icon completely
+      const taskbar = document.getElementById(app + '-taskbar');
+      if (taskbar) {
+        taskbar.style.display = 'none';
+        taskbar.style.visibility = 'hidden';
+        taskbar.style.opacity = '0';
+        taskbar.style.pointerEvents = 'none';
+        console.log(`${app} taskbar icon hidden successfully`);
+      } else {
+        console.error(`${app} taskbar icon not found`);
+      }
+      
+      // Adjust taskbar size after removing the app
+      adjustTaskbarSize();
+      console.log(`${app} window closed - taskbar icon removed`);
+      return true;
+    }
+    
+    // Function to open app from taskbar
+    function openAppFromTaskbar(app) {
+      if (app === 'galeri') {
+        // Show the overlay (taskbar icon is already visible from minimize)
+        const overlay = document.getElementById(app + 'Overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        adjustTaskbarSize();
+        // Initialize gallery slides
+        setTimeout(() => {
+          showSlide(1);
+        }, 100);
+        console.log(`${app} restored from taskbar`);
+      } else if (app === 'notepad') {
+        // Show the overlay (taskbar icon is already visible from minimize)
+        const overlay = document.getElementById(app + 'Overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        adjustTaskbarSize();
+        // Focus on textarea
+        setTimeout(() => {
+          document.getElementById('notepadText').focus();
+        }, 100);
+        console.log(`${app} restored from taskbar`);
+      } else {
+        // Show the overlay (taskbar icon is already visible from minimize)
+        const overlay = document.getElementById(app + 'Overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+          overlay.style.visibility = 'visible';
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+        adjustTaskbarSize();
+        console.log(`${app} restored from taskbar`);
+      }
+    }
+    
+    // Volume control
+    function changeVolume(value) {
+      const audio = document.querySelector('audio');
+      if (audio) {
+        audio.volume = value / 100;
+      }
+    }
+    
+    // Cake functions
+    function blowCandle() {
+      const flame = document.getElementById('flame');
+      const blowButton = document.getElementById('blowButton');
+      const birthdayMessage = document.getElementById('birthdayMessage');
+      const candle = document.getElementById('candle');
+      const blowSound = document.getElementById('blowSound');
+      const birthdaySound = document.getElementById('birthdaySound');
+      
+      // Play blow sound effect
+      if (blowSound) {
+        blowSound.currentTime = 0;
+        blowSound.play().catch(error => {
+          console.log('❌ Blow sound failed to play:', error);
+        });
+      }
+      
+      // Animasi tiup lilin
+      flame.style.animation = 'blowOut 0.5s ease-out forwards';
+      
+      // Sembunyikan tombol
+      blowButton.style.display = 'none';
+      
+      // Tampilkan pesan ulang tahun setelah lilin mati
+      setTimeout(() => {
+        candle.style.display = 'none';
+        birthdayMessage.style.display = 'block';
+        birthdayMessage.style.animation = 'fadeInUp 1s ease-out';
+        
+        // Play birthday sound effect
+        if (birthdaySound) {
+          birthdaySound.currentTime = 0;
+          birthdaySound.volume = 0.5; // Set volume to 50%
+          birthdaySound.play().catch(error => {
+            console.log('❌ Birthday sound failed to play:', error);
+          });
+        }
+      }, 500);
+    }
+    
+    function resetCake() {
+      const flame = document.getElementById('flame');
+      const blowButton = document.getElementById('blowButton');
+      const birthdayMessage = document.getElementById('birthdayMessage');
+      const candle = document.getElementById('candle');
+      const blowSound = document.getElementById('blowSound');
+      const birthdaySound = document.getElementById('birthdaySound');
+      
+      // Stop and reset audio
+      if (blowSound) {
+        blowSound.pause();
+        blowSound.currentTime = 0;
+      }
+      if (birthdaySound) {
+        birthdaySound.pause();
+        birthdaySound.currentTime = 0;
+      }
+      
+      // Reset semua elemen
+      flame.style.animation = '';
+      blowButton.style.display = 'block';
+      birthdayMessage.style.display = 'none';
+      candle.style.display = 'block';
+    }
+    
+    // Gallery functions
+    let currentSlide = 1;
+    const totalSlides = 5;
+    
+    function showSlide(slideNumber) {
+      console.log('Showing slide:', slideNumber);
+      
+      const currentSlideElement = document.getElementById(`slide${currentSlide}`);
+      const newSlideElement = document.getElementById(`slide${slideNumber}`);
+      
+      if (currentSlideElement && newSlideElement) {
+        // Determine animation direction
+        const direction = slideNumber > currentSlide ? 'right' : 'left';
+        
+        // Add fade-out animation to current slide
+        currentSlideElement.classList.add('fade-out');
+        
+        // Pause video if leaving video slide
+        if (currentSlide === 5) {
+          const video = currentSlideElement.querySelector('.polaroid-video, .direct-video');
+          if (video) {
+            video.pause();
+            console.log('⏸️ Video paused due to slide change');
+            
+            // Exit fullscreen if video is in fullscreen
+            if (document.fullscreenElement || document.webkitFullscreenElement || 
+                document.mozFullScreenElement || document.msFullscreenElement) {
+              if (document.exitFullscreen) {
+                document.exitFullscreen();
+              } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+              } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+              } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+              }
+              console.log('🖥️ Exited fullscreen due to slide change');
+            }
+          }
+        }
+        
+        setTimeout(() => {
+          // Hide current slide
+          currentSlideElement.classList.remove('active', 'fade-out');
+          currentSlideElement.style.display = 'none';
+          
+          // Show new slide with animation
+          newSlideElement.style.display = 'flex';
+          newSlideElement.classList.add('active');
+          newSlideElement.classList.add(direction === 'right' ? 'slide-in-right' : 'slide-in-left');
+          
+          // Remove animation class after animation completes
+          setTimeout(() => {
+            newSlideElement.classList.remove('slide-in-right', 'slide-in-left');
+            
+            // Check if this is the video slide (slide 5)
+            if (slideNumber === 5) {
+              const video = newSlideElement.querySelector('.polaroid-video, .direct-video');
+              if (video) {
+                // Auto play and fullscreen the video
+                setTimeout(() => {
+                  video.play().then(() => {
+                    console.log('🎬 Video autoplay started');
+                    // Request fullscreen after a short delay
+                    setTimeout(() => {
+                      if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                      } else if (video.webkitRequestFullscreen) {
+                        video.webkitRequestFullscreen();
+                      } else if (video.msRequestFullscreen) {
+                        video.msRequestFullscreen();
+                      }
+                      console.log('🖥️ Video fullscreen requested');
+                    }, 500);
+                  }).catch(error => {
+                    console.log('❌ Autoplay failed:', error);
+                  });
+                }, 100);
+              }
+            }
+          }, 500);
+          
+        }, 250); // Half of the transition time
+      }
+      
+      // Update counter
+      const imageCounter = document.getElementById('imageCounter');
+      if (imageCounter) {
+        imageCounter.textContent = `${slideNumber}/${totalSlides}`;
+        console.log('Image counter updated to:', `${slideNumber}/${totalSlides}`);
+      } else {
+        console.error('Image counter not found!');
+      }
+      
+      // Update button states
+      updateNavigationButtons();
+      
+      currentSlide = slideNumber;
+    }
+    
+    function previousSlide() {
+      console.log('Previous slide clicked, current slide:', currentSlide);
+      if (currentSlide > 1) {
+        const newSlide = currentSlide - 1;
+        showSlide(newSlide);
+        console.log('Moved to previous slide:', newSlide);
+      } else {
+        console.log('Already at first slide');
+      }
+    }
+    
+    function nextSlide() {
+      console.log('Next slide clicked, current slide:', currentSlide);
+      if (currentSlide < totalSlides) {
+        const newSlide = currentSlide + 1;
+        console.log('Attempting to show slide:', newSlide);
+        showSlide(newSlide);
+        console.log('Moved to next slide:', newSlide);
+      } else {
+        console.log('Already at last slide');
+      }
+    }
+    
+    function updateNavigationButtons() {
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      
+      if (prevButton) {
+        if (currentSlide <= 1) {
+          prevButton.disabled = true;
+          prevButton.style.opacity = '0.5';
+        } else {
+          prevButton.disabled = false;
+          prevButton.style.opacity = '1';
+        }
+      }
+      
+      if (nextButton) {
+        if (currentSlide >= totalSlides) {
+          nextButton.disabled = true;
+          nextButton.style.opacity = '0.5';
+        } else {
+          nextButton.disabled = false;
+          nextButton.style.opacity = '1';
+        }
+      }
+      
+      console.log('Navigation buttons updated - Current slide:', currentSlide, 'Total slides:', totalSlides);
+      console.log('Next button disabled:', currentSlide >= totalSlides);
+    }
+    
+    // Keyboard navigation for gallery
+    document.addEventListener('keydown', function(e) {
+      const galeriOverlay = document.getElementById('galeriOverlay');
+      if (galeriOverlay && galeriOverlay.style.display === 'flex') {
+        if (e.key === 'ArrowRight') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          previousSlide();
+        } else if (e.key === 'Escape') {
+          closeWindow('galeri');
+        } else if (e.key === 'f' || e.key === 'F') {
+                  // Manual fullscreen trigger for video
+        if (currentSlide === 5) {
+          const video = document.querySelector('.polaroid-video, .direct-video');
+          if (video) {
+            if (video.requestFullscreen) {
+              video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+              video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+              video.msRequestFullscreen();
+            }
+            console.log('🖥️ Manual fullscreen triggered with F key');
+          }
+        }
+        }
+      }
+    });
+    
+    // Fullscreen change event listener
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+    
+    function handleFullscreenChange() {
+      const video = document.querySelector('.polaroid-video, .direct-video');
+      if (video && !document.fullscreenElement && !document.webkitFullscreenElement && 
+          !document.mozFullScreenElement && !document.msFullscreenElement) {
+        // User exited fullscreen, pause video
+        video.pause();
+        console.log('⏸️ Video paused due to fullscreen exit');
+      }
+    }
+    
+    // Test function to manually trigger minimize/close
+    function testGaleriControls() {
+      console.log('Testing galeri controls...');
+      console.log('Testing minimize...');
+      minimizeWindow('galeri');
+      console.log('Testing close...');
+      closeWindow('galeri');
+    }
+    
+    // Add event listener for test video button
+    document.addEventListener('DOMContentLoaded', function() {
+      const testVideoBtn = document.getElementById('testVideoBtn');
+      if (testVideoBtn) {
+        testVideoBtn.addEventListener('click', function() {
+          // Ensure galeri is open first
+          const galeriOverlay = document.getElementById('galeriOverlay');
+          if (galeriOverlay && galeriOverlay.style.display === 'none') {
+            openGaleri();
+            // Wait a bit for galeri to open, then test video
+            setTimeout(() => {
+              testSlide5();
+            }, 200);
+          } else {
+            testSlide5();
+          }
+        });
+      }
+    });
+    
+    // Test function to check slide 5
+    function testSlide5() {
+      console.log('=== TESTING SLIDE 5 ===');
+      const slide5 = document.getElementById('slide5');
+      if (slide5) {
+        console.log('✅ Slide 5 found:', slide5);
+        console.log('📺 Slide 5 display:', slide5.style.display);
+        console.log('🏷️ Slide 5 classes:', slide5.className);
+        console.log('🎥 Video element:', slide5.querySelector('.direct-video'));
+        
+        // Force show slide 5
+        slide5.style.display = 'flex';
+        slide5.classList.add('active');
+        slide5.style.opacity = '1';
+        slide5.style.visibility = 'visible';
+        slide5.style.zIndex = '2007';
+        
+        // Hide other slides
+        for (let i = 1; i <= 4; i++) {
+          const otherSlide = document.getElementById(`slide${i}`);
+          if (otherSlide) {
+            otherSlide.style.display = 'none';
+            otherSlide.classList.remove('active');
+          }
+        }
+        
+        // Update counter
+        const imageCounter = document.getElementById('imageCounter');
+        if (imageCounter) {
+          imageCounter.textContent = `5/${totalSlides}`;
+        }
+        
+        currentSlide = 5;
+        updateNavigationButtons();
+        
+        // Immediate auto play and fullscreen video
+        const video = slide5.querySelector('.direct-video');
+        if (video) {
+          // Reset video to beginning
+          video.currentTime = 0;
+          
+          // Auto play immediately
+          video.play().then(() => {
+            console.log('🎬 Video autoplay started immediately');
+            
+            // Request fullscreen immediately after play starts
+            setTimeout(() => {
+              if (video.requestFullscreen) {
+                video.requestFullscreen();
+              } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+              } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+              } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+              }
+              console.log('🖥️ Video fullscreen requested immediately');
+            }, 100); // Reduced delay for immediate fullscreen
+          }).catch(error => {
+            console.log('❌ Autoplay failed:', error);
+            // Try fullscreen anyway
+            setTimeout(() => {
+              if (video.requestFullscreen) {
+                video.requestFullscreen();
+              } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+              } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+              } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+              }
+              console.log('🖥️ Video fullscreen requested despite autoplay failure');
+            }, 100);
+          });
+        }
+        
+        console.log('🎬 Slide 5 should now be visible with immediate autoplay and fullscreen!');
+      } else {
+        console.error('❌ Slide 5 not found!');
+      }
+    }
+  </script>
+</body>
+</html>

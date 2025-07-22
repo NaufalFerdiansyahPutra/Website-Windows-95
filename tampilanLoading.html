@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Screen Retro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tampilanloadingCSS.css">
+</head>
+<body>
+  <div class="frame">
+    <div class="loading-content">
+      <h1>LOADING...</h1>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <p class="loading-text">Silahkan Tunggu...</p>
+    </div>
+  </div>
+
+  <script>
+    // Simulasi loading selama 4 detik
+    const fill = document.querySelector('.progress-fill');
+    let width = 0;
+    const interval = setInterval(() => {
+        width += 1;
+        fill.style.width = width + "%";
+        if (width >= 100) {
+          clearInterval(interval);
+          console.log('🚀 Loading complete! Redirecting to desktop.html with present.exe auto-open...');
+          window.location.href = "desktop.html?open=present"; // redirect dengan parameter untuk auto-open present.exe
+      }
+    }, 40); // 40ms x 100 = 4 detik
+  </script>
+</body>
+</html>

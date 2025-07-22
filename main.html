@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CAKE.EXE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div class="window">
+    <div class="title-bar">
+      <div>CAKE.EXE</div>
+      <div class="buttons">
+        <div>_</div>
+        <div>▭</div>
+        <div onclick="window.location.href='desktop.html'">x</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Birthday Cake</h1>
+      <div class="subheader">Make a wish!</div>
+
+      <div class="cake-container">
+        <!-- Kue -->
+        <div class="cake">
+          <!-- Lapisan kue -->
+          <div class="cake-layer cake-bottom"></div>
+          <div class="cake-layer cake-middle"></div>
+          <div class="cake-layer cake-top"></div>
+          
+          <!-- Frosting/Icing -->
+          <div class="frosting frosting-bottom"></div>
+          <div class="frosting frosting-middle"></div>
+          <div class="frosting frosting-top"></div>
+          
+          <!-- Lilin -->
+          <div class="candle" id="candle">
+            <div class="candle-body" id="candleBody"></div>
+          </div>
+          <!-- Api terpisah dari lilin -->
+          <div class="flame" id="flame">
+            <div class="flame-inner"></div>
+          </div>
+        </div>
+        
+        <!-- Tombol tiup lilin -->
+        <button class="blow-button" onclick="blowCandle()" id="blowButton">
+          Tiup Lilinnya!
+        </button>
+        
+        <!-- Pesan ulang tahun (tersembunyi) -->
+        <div class="birthday-message" id="birthdayMessage">
+          <h2>Yey Happy Birthday!</h2>
+          <p>Semoga semua keinginanmu terkabul! 🎉</p>
+          <button onclick="resetCake()">Ulangi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function blowCandle() {
+      const flame = document.getElementById('flame');
+      const blowButton = document.getElementById('blowButton');
+      const birthdayMessage = document.getElementById('birthdayMessage');
+      const candle = document.getElementById('candle');
+      const candleBody = document.getElementById('candleBody');
+      
+      // Animasi tiup lilin - hanya api yang hilang
+      flame.style.animation = 'blowOut 0.5s ease-out forwards';
+      
+      // Sembunyikan tombol
+      blowButton.style.display = 'none';
+      
+      // Tampilkan pesan ulang tahun setelah api mati
+      setTimeout(() => {
+        // Pastikan flame tersembunyi dan lilin tetap terlihat
+        flame.style.visibility = 'hidden';
+        flame.style.opacity = '0';
+        flame.style.display = 'none';
+        
+        // Pastikan candle dan candle body tetap terlihat
+        candle.style.display = 'block';
+        candle.style.visibility = 'visible';
+        candle.style.opacity = '1';
+        candleBody.style.display = 'block';
+        candleBody.style.visibility = 'visible';
+        candleBody.style.opacity = '1';
+        
+        birthdayMessage.style.display = 'block';
+        birthdayMessage.style.animation = 'fadeInUp 1s ease-out';
+      }, 500);
+    }
+    
+    function resetCake() {
+      const flame = document.getElementById('flame');
+      const blowButton = document.getElementById('blowButton');
+      const birthdayMessage = document.getElementById('birthdayMessage');
+      const candle = document.getElementById('candle');
+      const candleBody = document.getElementById('candleBody');
+      
+      // Reset semua elemen
+      flame.style.animation = '';
+      flame.style.visibility = 'visible';
+      flame.style.opacity = '1';
+      flame.style.display = 'block';
+      blowButton.style.display = 'block';
+      birthdayMessage.style.display = 'none';
+      
+      // Pastikan candle tetap terlihat
+      candle.style.display = 'block';
+      candle.style.visibility = 'visible';
+      candle.style.opacity = '1';
+      candleBody.style.display = 'block';
+      candleBody.style.visibility = 'visible';
+      candleBody.style.opacity = '1';
+    }
+  </script>
+
+</body>
+</html> 

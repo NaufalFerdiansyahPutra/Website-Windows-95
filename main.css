@@ -1,0 +1,435 @@
+/* main.css */
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  background: radial-gradient(circle at top left, #000 0%, #001f4d 70%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.window {
+  background: #c0c0c0;
+  width: 500px;
+  border: 2px solid black;
+  box-shadow: 6px 6px #222;
+  animation: popUp 1s ease;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.title-bar {
+  background: #000080;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 10px;
+}
+
+.title-bar .buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.title-bar .buttons div {
+  width: 16px;
+  height: 16px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.title-bar .buttons div:hover {
+  background: #ddd;
+}
+
+.content {
+  background: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #000080;
+}
+
+.subheader {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Cake Container */
+.cake-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* Memastikan candle tidak terpengaruh */
+  position: relative;
+  overflow: visible;
+}
+
+/* Cake - Rectangular Layered */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  margin: 0 auto;
+  /* Memastikan candle tidak terpengaruh */
+  overflow: visible;
+}
+
+/* Cake Layers - Rectangular */
+.cake-layer {
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 20px rgba(0,0,0,0.3),
+    0 4px 8px rgba(0,0,0,0.4),
+    0 8px 16px rgba(0,0,0,0.2);
+}
+
+.cake-bottom {
+  width: 180px;
+  height: 35px;
+  background: 
+    linear-gradient(to bottom, #F5DEB3 0%, #DEB887 50%, #CD853F 100%);
+  bottom: 0;
+  left: 10px;
+  border: 2px solid #8B4513;
+}
+
+.cake-middle {
+  width: 150px;
+  height: 30px;
+  background: 
+    linear-gradient(to bottom, #F5DEB3 0%, #DEB887 50%, #CD853F 100%);
+  bottom: 35px;
+  left: 25px;
+  border: 2px solid #8B4513;
+}
+
+.cake-top {
+  width: 120px;
+  height: 25px;
+  background: 
+    linear-gradient(to bottom, #F5DEB3 0%, #DEB887 50%, #CD853F 100%);
+  bottom: 65px;
+  left: 40px;
+  border: 2px solid #8B4513;
+}
+
+/* Frosting/Icing - Wavy Top */
+.frosting {
+  position: absolute;
+  background: 
+    linear-gradient(to bottom, #8B4513 0%, #654321 50%, #3E2723 100%);
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 10px rgba(255,255,255,0.2),
+    0 2px 4px rgba(0,0,0,0.3);
+}
+
+.frosting-bottom {
+  width: 180px;
+  height: 12px;
+  bottom: 35px;
+  left: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+.frosting-middle {
+  width: 150px;
+  height: 10px;
+  bottom: 65px;
+  left: 25px;
+  border-radius: 8px 8px 0 0;
+}
+
+.frosting-top {
+  width: 120px;
+  height: 8px;
+  bottom: 90px;
+  left: 40px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Wavy Frosting Effect */
+.frosting::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: 
+    radial-gradient(ellipse at 20% 50%, transparent 0%, transparent 30%, #8B4513 30%, #8B4513 35%, transparent 35%),
+    radial-gradient(ellipse at 40% 50%, transparent 0%, transparent 30%, #8B4513 30%, #8B4513 35%, transparent 35%),
+    radial-gradient(ellipse at 60% 50%, transparent 0%, transparent 30%, #8B4513 30%, #8B4513 35%, transparent 35%),
+    radial-gradient(ellipse at 80% 50%, transparent 0%, transparent 30%, #8B4513 30%, #8B4513 35%, transparent 35%);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Candle - Enhanced 3D */
+.candle {
+  position: absolute;
+  bottom: 98px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  /* Memastikan lilin selalu terlihat */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+.candle-body {
+  width: 8px;
+  height: 25px;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      #FF0000 0px,
+      #FF0000 4px,
+      #FFFFFF 4px,
+      #FFFFFF 6px
+    );
+  border: 1px solid #CC0000;
+  border-radius: 4px;
+  box-shadow: 
+    inset 0 0 5px rgba(255,255,255,0.3),
+    0 2px 4px rgba(0,0,0,0.4);
+  position: relative;
+  /* Memastikan candle body selalu terlihat */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* Tambahan untuk memastikan terlihat */
+  background-color: #FF0000 !important;
+  min-height: 25px !important;
+  /* CSS yang lebih spesifik */
+  background-image: 
+    repeating-linear-gradient(
+      to bottom,
+      #FF0000 0px,
+      #FF0000 4px,
+      #FFFFFF 4px,
+      #FFFFFF 6px
+    ) !important;
+}
+
+/* Flame - Enhanced 3D */
+.flame {
+  position: absolute;
+  bottom: 113px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 20px;
+  background: 
+    radial-gradient(ellipse at center bottom, #FFD700 0%, #FFA500 50%, #FF4500 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flicker 0.5s infinite alternate;
+  box-shadow: 
+    0 0 10px #FFD700,
+    0 0 20px #FFA500,
+    0 0 30px #FF4500;
+  z-index: 11;
+  /* Memastikan flame tidak mengganggu candle */
+  pointer-events: none;
+}
+
+.flame-inner {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 12px;
+  background: 
+    radial-gradient(ellipse at center bottom, #FFFFFF 0%, #FFD700 50%, #FFA500 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 0 6px #FFFFFF,
+    0 0 12px #FFD700;
+}
+
+@keyframes flicker {
+  0% { 
+    transform: translateX(-50%) scale(1) rotate(-2deg);
+    box-shadow: 
+      0 0 10px #FFD700,
+      0 0 20px #FFA500,
+      0 0 30px #FF4500;
+  }
+  100% { 
+    transform: translateX(-50%) scale(1.1) rotate(2deg);
+    box-shadow: 
+      0 0 15px #FFD700,
+      0 0 25px #FFA500,
+      0 0 35px #FF4500;
+  }
+}
+
+@keyframes blowOut {
+  0% { 
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 
+      0 0 10px #FFD700,
+      0 0 20px #FFA500,
+      0 0 30px #FF4500;
+  }
+  50% { 
+    transform: translateX(-50%) scale(1.5) translateY(-10px);
+    opacity: 0.5;
+    visibility: visible;
+    box-shadow: 
+      0 0 20px #FFD700,
+      0 0 30px #FFA500,
+      0 0 40px #FF4500;
+  }
+  100% { 
+    transform: translateX(-50%) scale(0) translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: none;
+  }
+}
+
+
+
+/* Blow Button */
+.blow-button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  padding: 12px 24px;
+  background: 
+    linear-gradient(45deg, #FF6B35 0%, #FF4500 50%, #FF0000 100%);
+  color: white;
+  border: 3px solid #8B4513;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.3),
+    0 8px 16px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  /* Memastikan tidak mengganggu candle */
+  position: relative;
+  z-index: 5;
+}
+
+.blow-button:hover {
+  background: 
+    linear-gradient(45deg, #FF4500 0%, #FF0000 50%, #FF6B35 100%);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 12px rgba(0,0,0,0.4),
+    0 12px 24px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.blow-button:active {
+  transform: translateY(0px);
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.3),
+    0 4px 8px rgba(0,0,0,0.2),
+    inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Birthday Message */
+.birthday-message {
+  display: none;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  /* Memastikan tidak mengganggu candle */
+  position: relative;
+  z-index: 5;
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.birthday-message h2 {
+  font-size: 16px;
+  color: #FF6B35;
+  margin-bottom: 10px;
+  animation: colorBlink 2s infinite;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.birthday-message p {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.birthday-message button {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 10px 20px;
+  background: 
+    linear-gradient(45deg, #000080 0%, #001f4d 100%);
+  color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s;
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.birthday-message button:hover {
+  background: 
+    linear-gradient(45deg, #001f4d 0%, #000080 100%);
+  transform: scale(1.05);
+}
+
+.birthday-message button:active {
+  transform: scale(0.95);
+}
+
+@keyframes colorBlink {
+  0% { color: #FF6B35; }
+  25% { color: #FFD700; }
+  50% { color: #FF69B4; }
+  75% { color: #00CED1; }
+  100% { color: #FF6B35; }
+} 

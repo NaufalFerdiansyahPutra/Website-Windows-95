@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MUSIC_PLAYER.EXE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="musik.css">
+</head>
+<body>
+
+  <div class="window">
+    <div class="title-bar">
+      <div>MUSIC_PLAYER.EXE</div>
+      <div class="buttons">
+        <div>_</div>
+        <div>▭</div>
+        <div onclick="window.location.href='desktop.html'">x</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Play ini yaa.mp3</h1>
+      <div class="subheader">Classic Hits</div>
+
+      <!-- Tombol play & player -->
+      <audio id="audioPlayer" controls>
+        <source src="icon.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Volume control -->
+      <div class="volume-control">
+        <img src="images__1_-removebg-preview.png" alt="Volume">
+        <input type="range" min="0" max="1" step="0.01" value="0.5" id="volumeSlider">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('audioPlayer');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    // Set volume dari slider
+    volumeSlider.addEventListener('input', function () {
+      audio.volume = this.value;
+    });
+
+    // Set volume awal
+    audio.volume = volumeSlider.value;
+  </script>
+
+</body>
+</html>

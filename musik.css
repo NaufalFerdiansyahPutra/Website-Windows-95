@@ -1,0 +1,102 @@
+/* musik.css */
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  background: radial-gradient(circle at top left, #000 0%, #001f4d 70%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.window {
+  background: #c0c0c0;
+  width: 400px;
+  border: 2px solid black;
+  box-shadow: 6px 6px #222;
+  animation: popUp 1s ease;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.title-bar {
+  background: #000080;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 10px;
+}
+
+.title-bar .buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.title-bar .buttons div {
+  width: 16px;
+  height: 16px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+  line-height: 16px;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+.title-bar .buttons div:hover {
+  background: #ddd;
+}
+
+.content {
+  background: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  font-size: 10px;
+}
+
+h1 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.subheader {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.volume-control img {
+  width: 20px;
+  height: 20px;
+}
+
+input[type=range] {
+  flex: 1;
+}

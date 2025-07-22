@@ -1,0 +1,32 @@
+{
+  "name": "happy-birthday-keii",
+  "version": "1.0.0",
+  "description": "A nostalgic retro desktop experience created for Keii's 19th birthday",
+  "main": "tampilanLoading.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "birthday",
+    "retro",
+    "desktop",
+    "interactive",
+    "celebration",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Opaal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/happy-birthday-keii.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/happy-birthday-keii/issues"
+  },
+  "homepage": "https://yourusername.github.io/happy-birthday-keii",
+  "devDependencies": {},
+  "dependencies": {}
+} 

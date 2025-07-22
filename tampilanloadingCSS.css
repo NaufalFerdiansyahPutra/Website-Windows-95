@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    background: radial-gradient(circle at top left, #000080 0%, #4169E1 50%, #87CEEB 100%);
+    font-family: 'Press Start 2P', monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+      );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .frame {
+    background: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.3) 0%,
+      #000080 30%,
+      #4169E1 70%,
+      #87CEEB 100%
+    );
+    padding: 40px;
+    border: 5px solid #808080;
+    border-radius: 8px;
+    box-shadow: 
+      0 0 20px rgba(0, 0, 0, 0.5),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    width: 500px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(255, 255, 255, 0.03) 3px,
+        rgba(255, 255, 255, 0.03) 6px
+      );
+    pointer-events: none;
+    border-radius: 8px;
+  }
+  
+  .frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 192, 203, 0.1) 0%,
+      rgba(255, 192, 203, 0.05) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .loading-content {
+    position: relative;
+    z-index: 3;
+  }
+  
+  .loading-content h1 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 16px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #444;
+    border: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: white;
+    width: 0;
+    transition: width 0.1s linear;
+  }
+  .loading-text {
+    color: white;
+    margin-top: 20px;
+    font-size: 18px;
+    animation: blink 1.2s infinite step-start;
+    position: relative;
+    z-index: 3;
+  }
+  @keyframes blink{
+    50% {opacity:0; }
+  }

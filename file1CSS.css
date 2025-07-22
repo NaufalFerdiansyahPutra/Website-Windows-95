@@ -1,0 +1,153 @@
+body {
+      margin: 0;
+      font-family: 'Press Start 2P', monospace;
+      background: radial-gradient(circle at top left, #000 0%, #001f4d 70%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items:   center;
+      overflow: hidden;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .window {
+      background: #c0c0c0;
+      width: 600px;
+      border: 2px solid black;
+      box-shadow: 6px 6px #222;
+      animation: popUp 1s ease;
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .title-bar {
+      background: #000080;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      font-size: 10px;
+    }
+
+    .title-bar .buttons {
+      display: flex;
+      gap: 2px;
+    }
+
+    .title-bar .buttons div {
+      width: 16px;
+      height: 16px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      font-size: 10px;
+      text-align: center;
+      line-height: 16px;
+      border: 1px solid #444;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .title-bar .buttons div:hover {
+      background: #ddd;
+    }
+
+    .content {
+      background: white;
+      padding: 20px;
+      font-size: 10px;
+      overflow-y: auto;
+      max-height: 300px;
+      border-top: 2px solid #000080;
+    }
+
+    .header {
+      background: #000080;
+      color: white;
+      padding: 8px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 19px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .subheader {
+      color: #FFD700;
+      text-align: center;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .file-name {
+      background-color: #000080;
+      color: white;
+      font-size: 10px;
+      padding: 4px 8px;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    .message {
+      background-color: white;
+      border: 2px solid #000080;
+      padding: 10px;
+      font-size: 13px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #161414;
+      overflow-y: auto;
+      max-height: 150px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background: #c0c0c0;
+      text-align: center;
+      font-size: 9px;
+      padding: 6px;
+      border-top: 1px solid #666;
+    }
+
+    button {
+      margin-top: 10px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      padding: 5px 15px;
+      background: #000080;
+      color: white;
+      border: 2px solid black;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    button:hover {
+      background: #001f4d;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+    @keyframes colorBlink {
+  0% { color: #FFD700; }  
+  25% { color: #ffffff; } 
+  50% { color: #00FFFF; } 
+  75% { color: #ff69b4; }  
+  100% { color: #FFD700; } 
+}
+
+.blinking {
+  animation: colorBlink 2s infinite;
+}
