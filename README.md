@@ -1,4 +1,4 @@
-# 🎂 Happy Birthday Keii - Retro Desktop Experience
+# 🎂 Happy Birthday - Retro Desktop Experience
 
 A nostalgic retro desktop experience created with HTML, CSS, and JavaScript to celebrate birthday!
 
@@ -111,4 +111,5 @@ This project was created as a special birthday gift for Keii, featuring:
 ---
 
 **Created with ❤️ for Keii's 19th Birthday**
+
 *Happy Birthday Keii! 🎂✨* 
